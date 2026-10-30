@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Question Workbench: from vague topic to a defensible research question</title>
+<meta name="description" content="A six-step tool for writing research questions and problem statements, built on a review of PICO, SPIDER, FINER and manuscript-rejection studies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top"><div class="wrap bar">
+  <strong>Question Workbench</strong>
+  <nav aria-label="Sections"><a href="#build">Build</a><a href="#evidence">Evidence</a><a href="#gap">Gap</a><a href="#refs">References</a></nav>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <p class="byline">Based on the review by Divya Sutar, Vishwakarma University, Pune</p>
+  <h1>Sharpen the question before the paper depends on it.</h1>
+  <div class="demo" aria-label="Example rewrite">
+    <p class="weak">Does social media affect students?</p>
+    <p class="strong">Among <mark>first-year undergraduates</mark>, does <mark>social media use of 3 h or more a day</mark>, compared with <mark>less than 1 h a day</mark>, change <mark>end-of-semester GPA</mark>?</p>
+  </div>
+  <p class="lede">In the review, editors named a weak question or design in 338 of 369 manuscripts (92%) rejected before peer review. The six steps below turn a topic into a question you can score.</p>
+  <a class="btn" href="#build">Start building</a>
+</div></section>
+
+<section id="build"><div class="wrap">
+  <h2>Build your question</h2>
+  <div class="grid">
+    <div class="steps">
+      <article class="step"><h3><span class="n">1</span>State the topic</h3>
+        <p class="hint">One sentence.</p>
+        <input id="topic" type="text" placeholder="e.g. Does social media affect students?" aria-label="Topic"></article>
+
+      <article class="step"><h3><span class="n">2</span>Choose the framework</h3>
+        <fieldset id="fw">
+          <label><input type="radio" name="fw" value="PICO" checked><span><b>PICO</b> Compare groups or conditions.</span></label>
+          <label><input type="radio" name="fw" value="SPIDER"><span><b>SPIDER</b> Study experiences or perceptions.</span></label>
+          <label><input type="radio" name="fw" value="SPICE"><span><b>SPICE</b> Study services or practice.</span></label>
+        </fieldset>
+        <p class="note">Reviewed trials show mixed results for PICO in searching. Treat any framework as a completeness checklist, not proof of quality.</p></article>
+
+      <article class="step"><h3><span class="n">3</span>Fill each element</h3>
+        <p class="hint">Be specific: who, how many, where, when.</p>
+        <div id="fields"></div>
+        <div class="row"><button class="ghost" data-ex="PICO">Load the PICO example</button><button class="ghost" data-ex="SPIDER">Load the SPIDER example</button></div></article>
+
+      <article class="step"><h3><span class="n">4</span>Test it with FINER</h3>
+        <div id="finer" class="checks"></div></article>
+
+      <article class="step"><h3><span class="n">5</span>Write the problem statement</h3>
+        <label class="stack">What is known<textarea data-ps="known" rows="2" placeholder="What does existing work already show?"></textarea></label>
+        <label class="stack">What is missing<textarea data-ps="missing" rows="2" placeholder="What gap or open question remains?"></textarea></label>
+        <label class="stack">Why it matters<textarea data-ps="why" rows="2" placeholder="Who benefits if the gap is closed?"></textarea></label></article>
+
+      <article class="step"><h3><span class="n">6</span>Score it (20 points)</h3>
+        <div id="rubric"></div></article>
+    </div>
+
+    <aside class="preview" aria-live="polite">
+      <h3>Your question</h3>
+      <p id="q" class="q"></p>
+      <h3>Problem statement</h3>
+      <div id="ps" class="ps"></div>
+      <div class="score"><div><span id="total">0</span><small>/20</small></div><p id="band"></p></div>
+      <p id="finerCount" class="note"></p>
+      <div class="row"><button id="dl">Download .txt</button><button id="copy" class="ghost">Copy question</button><button id="reset" class="ghost">Start over</button></div>
+      <p class="note">Your work is saved in this browser only.</p>
+    </aside>
+  </div>
+</div></section>
+
+<section id="evidence" class="alt"><div class="wrap">
+  <h2>What the evidence shows</h2>
+  <p class="lede">Narrative review of 11 sources, most from health fields. Numbers are as the authors reported them.</p>
+  <div class="cols">
+    <div class="card"><h3>RQ1. Does question quality affect acceptance?</h3>
+      <p>Yes, as an association. Weak questions are a frequent reason for rejection, but the studies cannot show that fixing the question raises acceptance.</p>
+      <div class="bars"><div class="bar"><span>Rejected before review with an ineffective question or design [3]</span><i style="--w:92%"></i><b>92%</b></div></div>
+      <ul><li>[1] 151 manuscripts: insufficient problem statement among main reasons.</li><li>[2] Review of criticisms: insignificant question and insufficient problem statement.</li></ul></div>
+
+    <div class="card"><h3>RQ2. Do PICO and SPIDER improve results?</h3>
+      <p>Mixed. In a crossover trial of 22 clinicians [7], the differences were not significant.</p>
+      <div class="bars">
+        <div class="bar"><span>Precision, standard queries</span><i style="--w:40.2%"></i><b>4.02%</b></div>
+        <div class="bar"><span>Precision, PICO queries</span><i style="--w:34.4%" class="b2"></i><b>3.44%</b></div>
+        <div class="bar"><span>Recall, standard queries</span><i style="--w:12.27%"></i><b>12.27%</b></div>
+        <div class="bar"><span>Recall, PICO queries</span><i style="--w:13.62%" class="b2"></i><b>13.62%</b></div>
+      </div>
+      <ul><li>[8] SPIDER returned 55 hits against 14,250 for PICO, and 3 relevant papers against 14. It was the most specific tool but the least sensitive.</li><li>[9] An alternative framework matched PICO; both raised self-efficacy.</li></ul></div>
+
+    <div class="card"><h3>RQ3. Does teaching raise acceptance?</h3>
+      <p>No evidence found. None of the reviewed sources measured the acceptance of undergraduate papers after framework training.</p></div>
+  </div>
+</div></section>
+
+<section id="gap"><div class="wrap narrow">
+  <h2>The gap, and the study that would fill it</h2>
+  <p>The guide on this page is a synthesis of the sources and has not been tested on students. The proposed test is a randomised study that compares students who use the guide with students who do not, and follows them into later papers.</p>
+  <h3>Limits to keep in mind</h3>
+  <ul><li>The review is narrative, not a systematic review, and the web search was not exhaustive.</li><li>Most sources are from health fields, where PICO was designed. Findings may not transfer to engineering, computing or the humanities.</li><li>Positive findings are more likely to be published, so the picture may be too favourable.</li><li>The score bands in the tool (below 10, 10 to 14, 15 to 20) are a suggestion added for this site, not a validated cut-off.</li></ul>
+</div></section>
+
+<section id="refs" class="alt"><div class="wrap narrow">
+  <h2>References</h2>
+  <ol class="refs">
+    <li>G. Bordage, "Reasons reviewers reject and accept manuscripts: The strengths and weaknesses in medical education reports," Acad. Med., vol. 76, no. 9, pp. 889–896, 2001.</li>
+    <li>D. J. Pierson, "The top 10 reasons why manuscripts are not accepted for publication," Respir. Care, vol. 49, no. 10, pp. 1246–1252, 2004.</li>
+    <li>H. S. Meyer, S. J. Durning, D. P. Sklar, and L. A. Maggio, "Making the first cut: An analysis of Academic Medicine editors' reasons for not sending manuscripts out for external peer review," Acad. Med., vol. 93, no. 3, pp. 464–470, 2018.</li>
+    <li>W. S. Richardson, M. C. Wilson, J. Nishikawa, and R. S. Hayward, "The well-built clinical question: A key to evidence-based decisions," ACP J. Club, vol. 123, no. 3, pp. A12–A13, 1995.</li>
+    <li>A. Cooke, D. Smith, and A. Booth, "Beyond PICO: The SPIDER tool for qualitative evidence synthesis," Qual. Health Res., vol. 22, no. 10, pp. 1435–1443, 2012.</li>
+    <li>A. Booth, "Clear and present questions: Formulating questions for evidence based practice," Library Hi Tech, vol. 24, no. 3, pp. 355–368, 2006.</li>
+    <li>A. Hoogendam, P. F. de Vries Robbé, and A. J. Overbeke, "Comparing patient characteristics, type of intervention, control, and outcome (PICO) queries with unguided searching: A randomized controlled crossover trial," J. Med. Libr. Assoc., vol. 100, no. 2, pp. 121–126, 2012.</li>
+    <li>A. M. Methley et al., "PICO, PICOS and SPIDER: A comparison study of specificity and sensitivity in three search tools for qualitative systematic reviews," BMC Health Serv. Res., vol. 14, art. 579, 2014.</li>
+    <li>L. A. Kloda, J. T. Boruff, and A. S. Cavalcante, "A comparison of PICO to a new, alternative clinical question framework for search skills, search results, and self-efficacy: A randomized controlled trial," J. Med. Libr. Assoc., vol. 108, no. 2, pp. 185–194, 2020.</li>
+    <li>S. B. Hulley et al., Designing Clinical Research, 3rd ed. Philadelphia, PA, USA: Lippincott Williams &amp; Wilkins, 2007.</li>
+    <li>J. W. Creswell and J. D. Creswell, Research Design: Qualitative, Quantitative, and Mixed Methods Approaches, 5th ed. Thousand Oaks, CA, USA: SAGE, 2018.</li>
+  </ol>
+</div></section>
+</main>
+<footer><div class="wrap">Question Workbench. Companion site to "Formulating Effective Research Questions and Problem Statements: A Practical Student Guide".</div></footer>
+<script src="app.js"></script>
+</body>
+</html>
